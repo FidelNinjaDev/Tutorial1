@@ -1,4 +1,4 @@
-name: CI tutorial
+name: CI tutorial 1
 
 on: [push, pull_request]
 
