@@ -1,4 +1,4 @@
-name: CI tutoria
+name: CI tutorial
 
 on: [push, pull_request]
 
@@ -11,7 +11,7 @@ jobs:
       db:
         image: postgres:11
         env:
-          
+          POSTGRES_PASSWORD: postgres
         ports: ['5432:5432']
         options: >-
           --health-cmd pg_isready
@@ -21,11 +21,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.5
+    - name: Configurando Ruby 2.5
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.5
-    - name: Build and test with Rake
+    - name: Ejecutando Pruebas
       env:
         PGHOST: 127.0.0.1
         PGUSER: postgres
